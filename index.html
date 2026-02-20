@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon Finder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center transition duration-500">
+
+  <div class="w-full max-w-md p-6">
+
+    <!-- Dark Mode Toggle -->
+    <div class="flex justify-end mb-4">
+      <button id="themeToggle" class="px-3 py-1 bg-white dark:bg-gray-700 rounded-lg shadow hover:scale-105 transition">
+        🌙
+      </button>
+    </div>
+
+    <!-- Main Card -->
+    <div class="bg-white dark:bg-gray-800 shadow-2xl rounded-2xl p-6 transition-all duration-500">
+
+      <!-- Title -->
+      <h1 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-6">
+        Pokémon Finder
+      </h1>
+
+      <!-- Search Section -->
+      <div class="flex gap-2 mb-4">
+        <input
+          type="text"
+          id="pokemonInput"
+          placeholder="Enter Pokémon name or ID"
+          class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        />
+        <button
+          id="searchBtn"
+          class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition disabled:opacity-50"
+        >
+          Search
+        </button>
+      </div>
+
+      <!-- Loading Spinner -->
+      <div id="loading" class="hidden flex justify-center my-4">
+        <div class="w-8 h-8 border-4 border-indigo-500 border-dashed rounded-full animate-spin"></div>
+      </div>
+
+      <!-- Pokémon Display Area -->
+      <div id="pokemonCard" class="mt-4"></div>
+
+      <!-- Error Message -->
+      <p id="errorMessage" class="text-red-500 text-center mt-4 hidden"></p>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
